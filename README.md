@@ -5,9 +5,11 @@ find the combination of trump card that can be 24 using four arithmetic operatio
 
 rule: take four card from trump card(except joker). use four arithmetic operation and the four number of trump to make 24.
 
+
 this program search the possible combination of cards that make 24.
 
 if it is possible to make 24, this program will show one example of function.but it is written in Reverse Polish Notation. goole it ;-)
+
 
 if you change parameter you can find the answer of 10 puzzle
 
