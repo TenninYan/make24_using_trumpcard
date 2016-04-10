@@ -1,12 +1,13 @@
 # for puzzle10
-start = 0
-finish = 9+1
-target_num = 10
+# see the detail in https://ja.wikipedia.org/wiki/%E3%83%86%E3%83%B3%E3%83%91%E3%82%BA%E3%83%AB
+# start = 0
+# finish = 9+1
+# target_num = 10
 
 # for trump card
-# start = 1
-# finish = 13 + 1
-# target_num = 24
+start = 1
+finish = 13 + 1
+target_num = 24
 
 ops = {"+": lambda a,b: b + a,
        "-": lambda a,b: b - a,
@@ -14,6 +15,7 @@ ops = {"+": lambda a,b: b + a,
        "/": lambda a,b: b / a,
 }
 
+# cauculate formula written in Reverse Polish Notation
 def poland(array):
     stack = []
     try:
@@ -27,11 +29,15 @@ def poland(array):
     except:
         return -1
 
+# check if it can be 24 or other target_num
 def make_24(i,j,k,l):
     operator = ["+","-","*","/"]
     for a in operator:
         for b in operator:
             for c in operator:
+                # there are five order to cauculate four digits
+                # i wrote all the way in Reverse Polish Notation
+                # but might have better way
                 array = [[i, j, a, k, b, l, c],
                          [i, j, a, k, l, b, c],
                          [i, j, k, a, b, l, c],
@@ -45,6 +51,8 @@ def make_24(i,j,k,l):
                         return array[z]
     # print "not found!"
 
+# change order in array
+# must have better way
 def test(array1):
     for x in range(4):
         array2 = array1[:]
