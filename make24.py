@@ -1,12 +1,12 @@
 # for puzzle10
-# start = 0
-# finish = 9+1
-# target_num = 10
+start = 0
+finish = 9+1
+target_num = 10
 
 # for trump card
-start = 1
-finish = 13 + 1
-target_num = 24
+# start = 1
+# finish = 13 + 1
+# target_num = 24
 
 ops = {"+": lambda a,b: b + a,
        "-": lambda a,b: b - a,
@@ -70,16 +70,15 @@ def main():
         for j in range(i,finish):
             for k in range(j,finish):
                 for l in range(k,finish):
-                    # print "*"*10
-                    # print i,j,k,l
+                    print "*"*10
+                    print i,j,k,l
                     example = test([i,j,k,l])
                     if  example == None:
                         count_impossible +=1
-                        print i,j,k,l
-                        # print "not found"
+                        print "not found"
                     else:
                         count_possible +=1
-                        # print "found like " + str(example)
+                        print "found like " + str(example)
 
     # print test([6, 8, 8, 9])
     # print make_24(8, 6, 9, 8)
